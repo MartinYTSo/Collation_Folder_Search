@@ -11,10 +11,12 @@ import os
 from tkinter import filedialog
 import tkinter.messagebox
 
+
 class FileAppV3:
     def __init__(self):
         self.root=Tk()
         self.root.geometry('1000x150')
+        self.root.resizable(False,False)
         self.root.title('Collation Folder Search')
         
         self.mainFrame = Frame(self.root, container="false")
@@ -48,11 +50,36 @@ class FileAppV3:
         
         self.clearButton = Button(self.mainFrame)
         self.clearButton.configure(text="Clear",command=self.clear)
+        
+        self.resultsFrame=Frame(self.mainFrame)
+        self.resultsFrame.configure(height=400, takefocus=False, width=450)
+        self.outerframe=Frame(self.resultsFrame,height=400,width=450)
+        self.outerframe.pack(padx=20,pady=20)
+        
+        self.innerFrame=Frame(self.outerframe)
+        self.innerFrame.pack()
+        
+        self.listbox=Listbox(self.innerFrame,height=5,width=90)
+        self.listbox.pack(side='left')
+        
+        self.vScrollbar=Scrollbar(self.innerFrame,orient=VERTICAL)
+        self.vScrollbar.pack(side='right',fill=Y)
+        
+        self.hScrollbar=Scrollbar(self.outerframe,orient=HORIZONTAL)
+        self.hScrollbar.pack(side='bottom',fill=X)
+        
+        self.hScrollbar.config(command=self.listbox.xview) 
+        self.vScrollbar.config(command=self.listbox.yview)
+        self.listbox.config(yscrollcommand=self.vScrollbar.set,
+                            xscrollcommand=self.hScrollbar.set)
 
-        self.resultsOutputLabeltext=StringVar()
-        self.resultsOutputLabel = Label(self.mainFrame)
-        self.resultsOutputLabel.configure(textvariable=self.resultsOutputLabeltext)
-
+        #self.resultsOutputLabeltext=StringVar()
+       # self.resultsOutputLabel = Label(self.mainFrame)
+       # self.resultsOutputLabel.configure(textvariable=self.resultsOutputLabeltext)
+       
+        
+        self.authorLabel=Label(self.mainFrame)
+        self.authorLabel.configure(text='Made By Martin So 2022')
         
         self.mainFrame.configure(cursor="arrow", height="150", width="1000")
 
@@ -62,12 +89,15 @@ class FileAppV3:
         self.filepath.place(anchor="nw", relx="0.07", rely="0.06", x="0", y="0")
         self.keyword.place(anchor="nw", relx="0.01", rely="0.30", x="0", y="0")
         self.keywordEntry.place(anchor="nw", relx="0.07", rely="0.30", x="0", y="0")
-        self.resultsLabel.place(anchor="nw", relx="0.45", rely="0.06", x="0", y="0")
+        self.resultsLabel.place(anchor="nw", relx="0.55", rely="0.06", x="0", y="0")
         self.browseButton.place(anchor="nw", relx="0.05", rely="0.49", x="0", y="0")
         self.searchButton.place(anchor="nw", relx="0.10", rely="0.49", x="0", y="0")
         self.clearButton.place(anchor="nw", relx="0.15", rely="0.49", x="0", y="0")
-        self.resultsOutputLabel.place(anchor="nw", relx="0.20", rely="0.35", x="0", y="0")
+        #self.resultsOutputLabel.place(anchor="nw", relx="0.20", rely="0.35", x="0", y="0")
+        self.authorLabel.place(anchor='nw',relx='0.86',rely='0.85')
         self.mainFrame.place(anchor="nw", x="0", y="0")
+        self.resultsFrame.place(anchor="nw", relx="0.25", rely="0.17", y="0")
+        
         
         
 
@@ -86,11 +116,13 @@ class FileAppV3:
         for dirpath, dirnames, filenames in os.walk(getFileName):
             for filename in [f for f in filenames if f.endswith('.docx')]:
                 files.append(os.path.join(dirpath,filename))
+                
         
         getSearch= self.searchAlgo(files,getKeyword)
         for x in getSearch:
-            stringFormat+='{}\n'.format(x)
-        self.resultsOutputLabeltext.set(stringFormat)
+            self.listbox.insert(END,x)
+           # stringFormat+='{}\n'.format(x)
+       # self.resultsOutputLabeltext.set(stringFormat)
         
     
     def searchAlgo(self,lstofFiles,keyword):
@@ -104,7 +136,8 @@ class FileAppV3:
     
     def clear(self):
         clearResult=''
-        self.resultsOutputLabeltext.set(clearResult)
+        #self.resultsOutputLabeltext.set(clearResult)
+        self.listbox.delete(0,END)
         self.filePthSearchPath.set(clearResult)
         self.keywordEntry.delete(0,'end')
     def searchFile(self):
@@ -114,6 +147,4 @@ class FileAppV3:
 
         
         
-        
-    
 FileAppV3()
