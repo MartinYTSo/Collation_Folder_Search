@@ -8,7 +8,10 @@
    3. Double Click `FilePathFinder.exe`
 - With IDE
   1. Download and run FileFinderv4.py 
+  
+The application will look like this upon opening:
 
+![image](https://user-images.githubusercontent.com/72810148/166083223-720924e9-bc79-48fd-9a75-9e76b60cb45f.png)
 ### Background 
 Imagine if you are working as an administrative assistant in an office and you are managing Word documents. Your boss comes up to you and asks to retrieve a Word document that was dated 5 months back mentioning about a yearly report. You wouldn't want to manually search through 5 months worth of documents in a folder would you? After all, he wants it ASAP.
 
@@ -21,8 +24,6 @@ Introducing the File Path Finder (Collation Folder Searcher). The File Path Find
 - A `Search` button to search the file path(s) where your keywords are located
 - A `Clear` button to clear all entries 
 
-The application will look like this upon opening
-![image](https://user-images.githubusercontent.com/72810148/166083223-720924e9-bc79-48fd-9a75-9e76b60cb45f.png)
 
 Here is an example of the application in practice. I have created a `TestFolder` with random word documents from my past classes from school. I have entered the keyword `exam`. The following results have are listed here as shown: 
 ![image](https://user-images.githubusercontent.com/72810148/166084303-64a5143b-31c5-40d5-a441-a262db26fd4a.png)
