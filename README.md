@@ -17,6 +17,7 @@ Imagine if you are working as an administrative assistant in an office and you a
 
 Introducing the File Path Finder (Collation Folder Searcher). The File Path Finder will allow you to retrieve the path(s) of the file in a matter of seconds.
 
+Source code: FileFinderv4.py
 ### Features
 - A `Browse` button to select the folder
 - An entry box to put your desired keyword in
