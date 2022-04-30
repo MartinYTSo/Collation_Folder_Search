@@ -17,7 +17,8 @@ Imagine if you are working as an administrative assistant in an office and you a
 
 Introducing the File Path Finder (Collation Folder Searcher). The File Path Finder will allow you to retrieve the path(s) of the file in a matter of seconds.
 
-Source code: FileFinderv4.py
+### Source code
+Download FileFinderv4.py and run it through the IDE of your choice. Please ensure that the version of Python is version 3 or later.
 ### Features
 - A `Browse` button to select the folder
 - An entry box to put your desired keyword in
@@ -29,4 +30,5 @@ Here is an example of the application in practice. I have created a `TestFolder`
 ![image](https://user-images.githubusercontent.com/72810148/166084303-64a5143b-31c5-40d5-a441-a262db26fd4a.png)
 
 ### Dependencies/Requirements
-[docx2txt](https://github.com/ankushshah89/python-docx2txt) for converting word documents to raw text in order to match with keyword inputted
+- `Python3.xx`
+- [docx2txt](https://github.com/ankushshah89/python-docx2txt) for converting word documents to raw text in order to match with keyword inputted
