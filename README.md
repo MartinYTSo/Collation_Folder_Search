@@ -4,7 +4,7 @@
 ### How to Run
 - Standalone App:
    1. Download `FilePathFinder` folder
-   2. Double Click  `app`
+   2. Double Click  `dist`
    3. Double Click `FilePathFinder.exe`
 - With IDE
   1. Download and run FileFinderv4.py 
