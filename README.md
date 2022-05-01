@@ -29,7 +29,7 @@ Download `FileFinderv4.py` and run it through the IDE of your choice. Please ens
 Here is an example of the application in practice. I have created a `TestFolder` with random word documents from my past classes from school. I have entered the keyword `the`. The following results have are listed here as shown: 
 ![image](https://user-images.githubusercontent.com/72810148/166127065-fe1dbf57-a64a-48ea-86f7-fc53b6c5bf24.png)
 
-Heres another word, this time with the word `safet`
+Heres another word, this time with the word `safe`
 ![image](https://user-images.githubusercontent.com/72810148/166127079-693aabbd-70f8-47b7-94f9-ef7eaf78eefd.png)
 
 If you do not input a word, all the files in the folder selected will show up
