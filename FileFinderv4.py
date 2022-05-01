@@ -135,7 +135,7 @@ class FileApp:
     
     def cleanList(self,lst): #format string
         for x in  range(len(lst)):
-            lst[x]=lst[x].replace('/','//')
+            lst[x]=lst[x].replace('/','\\')
         return lst
             
         
