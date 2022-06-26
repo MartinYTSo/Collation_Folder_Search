@@ -38,3 +38,6 @@ If you do not input a word, all the files in the folder selected will show up
 ### Dependencies/Requirements
 - `Python3.xx`
 - [docx2txt](https://github.com/ankushshah89/python-docx2txt) for converting word documents to raw text in order to match with keyword inputted
+
+### Known Bugs:
+- Program wont work on a folder that was extracted originally on a zip folder.
